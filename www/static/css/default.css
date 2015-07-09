@@ -1,0 +1,230 @@
+@charset "utf-8";
+/* リセット */
+*{
+/*    font: 100% "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, Osaka, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif; */
+    font: 100% mplus-1p-regular;
+    src: url('http://mplus-fonts.sourceforge.jp/webfonts/mplus-1p-regular.ttf')
+     format("truetype");
+}
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,
+pre,code,form,fieldset,legend,input,textarea,p,blockquote,th,td,span{
+    margin:0;padding:0;
+}
+
+a{
+    text-decoration: none;
+    color:000;
+}
+
+/* 大枠 */
+body{
+    width:100%;
+}
+div#container{
+    /* width:1000px; */
+    min-width:310px;
+    margin-left:auto;
+    margin-right:auto;
+    text-align:left;
+}
+div#head{
+    position: relative;
+    height:50px;
+    right:0;
+    left:0;
+    margin-bottom: 20px;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+}
+div#nav {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+}
+div#nav li {
+    display: inline-block;
+}
+div#nav .navImage,
+div#nav .navList {
+    display: block;
+    width: 40px;
+    height: 40px;
+    background-size: 100% auto;
+    background-repeat: no-repeat;
+    background-position: 0 0;
+    text-indent: -9999px;
+}
+div#nav .navImage {
+    background-image: url(../img/navImage.png);
+}
+div#nav .navList {
+    background-image: url(../img/navList.png);
+}
+div#foot{
+    clear:both;
+    width:100%;
+    /*height:100px;*/
+}
+div#foot iframe{
+    height: 100%;
+    width: 100%;
+    border: none;
+}
+div#taglist{
+    width: 100%;
+}
+div#taglist li {
+    display: inline-block;
+}
+
+.typeImage .out{
+	/*box-shadow: 1px 1px 2px rgba(0,0,0,0.1), -1px -1px 2px rgba(0,0,0,0.1);*/
+	box-shadow: 1px 1px 2px #000, -1px -1px 2px #000;
+	display: inline-block;
+	margin:2px;
+}
+.typeImage .box{
+    width:280px;
+    height:280px;
+    margin:5px;
+    float:left;
+    overflow: hidden;
+	position: relative;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    /*box-shadow: 1px 1px 2px rgba(0,0,0,0.1), -1px -1px 2px rgba(0,0,0,0.1);*/
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+.typeImage .box p{
+    padding:10px;
+    font-size:110%;
+    color:#fff;
+    /*background-color:#000;*/
+}
+.typeImage .top{
+    background-color:#000;
+}
+
+.typeImage .top span{
+    padding-left: 50px;
+    padding-right: 10px;
+    font-size: 180%;
+    color:#fff;
+}
+.typeImage .box .tw{
+    background-image: url(../img/twitter.png);
+    background-position: 10px center;
+    background-repeat: no-repeat;
+    background-size: 30px auto;
+}
+.typeImage .box .fb{
+    background-image: url(../img/fb.png);
+    background-position: 10px center;
+    background-repeat: no-repeat;
+    background-size: 30px auto;
+}
+
+.typeImage .box .bottom{
+	width:100%;
+	background-color:#000;
+	opacity: 0.8;
+	overflow: hidden;
+	position: absolute;
+	bottom: 0;
+}
+
+.typeList .box{
+    margin-bottom:10px;
+    padding: 5px;
+    border-radius: 2px;
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    border-bottom: 1px solid #ddd;
+}
+.typeList .box a {
+    display: block;
+    text-decoration: none;
+    font-weight:bold;
+    color: #000;
+}
+.typeList .box p{
+    font-size:120%;
+    font-weight:bold;
+    color: #000;
+}
+.typeList .box .tw{
+    display: inline-block;
+    margin-bottom: 5px;
+    padding: 0px 3px 0px 30px;
+    font-size: 110%;
+    color: #000;
+    background-image: url(../img/twitter.png);
+    background-position: 3px 3px;
+    background-repeat: no-repeat;
+    background-size: 20px auto;
+    border-bottom: 2px solid #0063dc;
+}
+.typeList .box .fb{
+    display: inline-block;
+    margin-bottom: 5px;
+    padding: 0px 3px 0px 30px;
+    font-size: 110%;
+    color: #000;
+    background-image: url(../img/fb.png);
+    background-position: 0px 0px;
+    background-repeat: no-repeat;
+    background-size: 15px auto;
+    border-bottom: 2px solid #0063dc;
+}
+
+
+
+.date{
+    display:none;
+    font-size:100%;
+    color:#fff;
+    background-color:#000;
+    opacity:0.7;
+    width :100%;
+}
+div.ads{
+clear:both;
+}
+div.ads div{
+    margin:0 auto;
+}
+#body {
+    max-width:1000px;
+    margin:auto;
+}
+#body .topimg{
+    width:400px;
+    height:400px;
+    background-repeat: no-repeat;
+    background-position: center;
+    position: relative;
+    margin:auto;
+}
+div.index{
+    clear:both;
+    width: 100%;
+    background-color:#000;
+}
+div.index h2{
+    margin: 10px;
+    color:#fff;
+    font-size: 180%;
+    line-height: 180%;
+}
+/*
+@media screen and (max-width: 550px){
+div#container{
+    width:500px;
+}
+#body {
+    width:500px;
+}
+
+}
+*/
