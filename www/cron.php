@@ -4,7 +4,7 @@ include_once(dirname(__FILE__).'/lib/magpierss-0.72/rss_utils.inc');
 //include_once(dirname(__FILE__).'/lib/Curl.class.inc');
 $source = parse_ini_file(dirname(__FILE__).'/source.ini',true);
 $fbapi    = 'http://graph.facebook.com/?id=';
-$twapi    = 'http://urls.api.twitter.com/1/urls/count.json?url=';
+//$twapi    = 'http://urls.api.twitter.com/1/urls/count.json?url=';
 $blogs = array();
 $unique   = array();
 // データの取得
@@ -45,7 +45,7 @@ $res = array();
 foreach($unique as $i => $v){
 	$res[$i] = array();
 	$res[$i]['fb'] = file_get_contents($fbapi.$v);
-	$res[$i]['tw'] = file_get_contents($twapi.$v);
+//	$res[$i]['tw'] = file_get_contents($twapi.$v);
 }
 $tmp = array();
 foreach($blogs as $i => $v){
@@ -53,8 +53,9 @@ foreach($blogs as $i => $v){
 	$twc = json_decode($res[$i]['tw']);
 	$tmp[$i] = $v;
 	$tmp[$i]['fb'] = isset($fbc->shares)?(int)$fbc->shares:0;
-	$tmp[$i]['tw'] = isset($twc->count)?(int)$twc->count:0;
-	$tmp[$i]['ttl'] = $tmp[$i]['fb'] + $tmp[$i]['tw'];
+//	$tmp[$i]['tw'] = isset($twc->count)?(int)$twc->count:0;
+//	$tmp[$i]['ttl'] = $tmp[$i]['fb'] + $tmp[$i]['tw'];
+	$tmp[$i]['ttl'] = $tmp[$i]['fb'];
 }
 $blogs = $tmp;
 // total順にソート
@@ -68,6 +69,13 @@ if($blogs[0]['ttl'] == 0){
 
 // データファイルに保存
 file_put_contents(dirname(__FILE__).'/blogs.txt',serialize($blogs));
+// ログの保存 一日一回最初だけ
+/*
+$log = dirname(__FILE__).'/log/'.date('Y-m-d').'.txt';
+if(file_exists($log)){
+	file_put_contents($log,serialize($blogs));
+}
+*/
 
 // {{{ class content
 class content{

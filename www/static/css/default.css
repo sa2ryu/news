@@ -83,7 +83,7 @@ div#taglist li {
 	margin:2px;
 }
 .typeImage .box{
-    width:280px;
+    width:260px;
     height:280px;
     margin:5px;
     float:left;
@@ -141,6 +141,7 @@ div#taglist li {
     -webkit-border-radius: 2px;
     -moz-border-radius: 2px;
     border-bottom: 1px solid #ddd;
+	background-size:0px 0px;
 }
 .typeList .box a {
     display: block;
@@ -160,7 +161,7 @@ div#taglist li {
     font-size: 110%;
     color: #000;
     background-image: url(../img/twitter.png);
-    background-position: 3px 3px;
+    background-position: 0px 0px;
     background-repeat: no-repeat;
     background-size: 20px auto;
     border-bottom: 2px solid #0063dc;

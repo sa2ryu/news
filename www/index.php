@@ -36,6 +36,7 @@ if($tag){
 <link rel="stylesheet" href="/static/css/default.css" type="text/css" />
 <link rel="canonical" href="http://news.wkbr.net/">
 </head>
+
 <body>
 <div id="wrap">
 
@@ -64,7 +65,9 @@ if($tag){
 <div class="box" style="background-image: url('<?php echo $v['img'];?>');">
 <div class="top">
 <span class="fb"><?php echo $v['fb'];?></span>
+<?php /*
 <span class="tw"><?php echo $v['tw'];?></span>
+*/ ?>
 </div>
 <div class="bottom">
 <a href="<?php echo $v['link'];?>" target="_brank">
@@ -88,7 +91,19 @@ endforeach;
 </div>
 <script src="/static/js/jquery-2.1.0.min.js"></script>
 <script>
-(function($){
+jQuery(function($){
+$(window).on('load resize', function(){
+var conwidth = $('.typeImage').width();
+var defaultboxwidth = 270;
+var boxcount = parseInt(conwidth / defaultboxwidth);
+var boxwidth = parseInt(conwidth / boxcount) - 18;
+$('.typeImage .box').width(boxwidth);
+$('.typeList .box').width('');
+});
+});
+</script>
+<script>
+jQuery(function($){
 	var $container = $("#container"),
 		$navImage = $(".navImage"),
 		$navList  = $(".navList");
@@ -99,9 +114,9 @@ endforeach;
 	$navList.on("click", function(e){
 		e.preventDefault();
 		$container.removeClass("typeImage").addClass("typeList");
+		$('.typeList .box').width('');
 	});
-
-})(jQuery);
+});
 </script>
 <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
