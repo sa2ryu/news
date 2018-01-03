@@ -1,10 +1,8 @@
 @charset "utf-8";
 /* リセット */
-*{
-/*    font: 100% "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, Osaka, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif; */
-    font: 100% mplus-1p-regular;
-    src: url('http://mplus-fonts.sourceforge.jp/webfonts/mplus-1p-regular.ttf')
-     format("truetype");
+@import url(//fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700);
+body{
+font-family:"Roboto Slab" , Garamond , "Times New Roman" , "游明朝" , "Yu Mincho" , "游明朝体" , "YuMincho" , "ヒラギノ明朝 Pro W3" , "Hiragino Mincho Pro" , "HiraMinProN-W3" , "HGS明朝E" , "ＭＳ Ｐ明朝" , "MS PMincho" , serif;
 }
 body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,
 pre,code,form,fieldset,legend,input,textarea,p,blockquote,th,td,span{
@@ -21,7 +19,6 @@ body{
     width:100%;
 }
 div#container{
-    /* width:1000px; */
     min-width:310px;
     margin-left:auto;
     margin-right:auto;
@@ -75,6 +72,9 @@ div#taglist{
 div#taglist li {
     display: inline-block;
 }
+div#taglist a {
+    font-size: 120%;
+}
 
 .typeImage .out{
 	/*box-shadow: 1px 1px 2px rgba(0,0,0,0.1), -1px -1px 2px rgba(0,0,0,0.1);*/
@@ -92,12 +92,11 @@ div#taglist li {
     border-radius: 5px;
     -webkit-border-radius: 5px;
     -moz-border-radius: 5px;
-    /*box-shadow: 1px 1px 2px rgba(0,0,0,0.1), -1px -1px 2px rgba(0,0,0,0.1);*/
     background-position: center center;
     background-repeat: no-repeat;
 }
 .typeImage .box p{
-    padding:10px;
+    padding:2px 5px;
     font-size:110%;
     color:#fff;
     /*background-color:#000;*/
@@ -134,6 +133,12 @@ div#taglist li {
 	bottom: 0;
 }
 
+.typeImage .box .bottom span{
+	font-size:90%;
+}
+.typeImage .box .bottom span:nth-child(2){
+	float: right;
+}
 .typeList .box{
     margin-bottom:10px;
     padding: 5px;
@@ -218,14 +223,4 @@ div.index h2{
     font-size: 180%;
     line-height: 180%;
 }
-/*
-@media screen and (max-width: 550px){
-div#container{
-    width:500px;
-}
-#body {
-    width:500px;
-}
 
-}
-*/
